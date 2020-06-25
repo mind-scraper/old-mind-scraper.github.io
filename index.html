@@ -8,14 +8,27 @@
     <link rel="stylesheet" href="index.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
     <script src="index.js"></script>
+	
+	<style>
+		div.box{
+			width: 320px;
+			padding: 10px;
+			border: 5px solid gray;
+			margin: auto;
+			
+	</style>
 </head>
 
+<body>
+	<h1 style="margin-top: 50px;text-align: center; font-family: 'Open Sans', sans-serif;">WELCOME</h1>
+	<h2 style="margin-left: 45px; font-family: 'Open Sans', sans-serif;">This page is under construction</h2>
+	<p style="margin-left: 45px; font-family: 'Open Sans', sans-serif;"> Let's play a game instead.  </p>
+</body>
+
 <body id="t" class="offline">
-	<h1 style="text-align: center;font-family: 'Open Sans', sans-serif;">GIFU RUN!!!</h1>
-    <div id="messageBox" class="sendmessage">
-		 <p style="text-align: center;font-family: 'Open Sans', sans-serif;"> Don't make her cry! <br> TAP or Press SPACE to start </p>
-         <div class="niokbutton" onclick="okbuttonsend()"></div>
-    </div>
+<div class="box">
+	<h4 style="text-align: center;font-family: 'Open Sans', sans-serif;">GIFU RUN!!!</h4>
+	<p style="text-align: center;font-family: 'Open Sans', sans-serif;"> Don't make her cry! <br> Press W to jump & S to duck</p>
     <div id="main-frame-error" class="interstitial-wrapper">
         <div id="main-content">
             <div class="icon icon-offline" alt=""></div>
@@ -30,6 +43,7 @@
             </template>
         </div>
     </div>
+</div>
 </body>
 
 <script>
@@ -41,5 +55,7 @@
     }
 };
 </script>
+
+
     
 </html>
