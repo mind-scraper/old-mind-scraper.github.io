@@ -84,7 +84,7 @@
                     </div>
                     <p class="mb-30">Let's try GAMESS on the simplest system where everything began, the hydrogen atom.</p>
 					
-					<blockquote>If the energy is not 13.6 eV, then it is wrong.</blockquote>
+					<blockquote class=quotation>If the energy is not 13.6 eV, then it is wrong.</blockquote>
 														
 					<p class="mb-30">The goal of this tutorial is to make a GAMESS input file for the hydrogen atom and then run it on your computer system. This tutorial uses GAMESS on Windows 64 bit.
 					If you are using another operating system, the input file will be the same but the process to run the calculation maybe a little different.</p>
@@ -104,7 +104,7 @@
 					This group specifies fundamental job options. 
 					Here I  write the commands and their explanation.</p>
 					
-					<blockquote>&nbsp; $contrl runtyp=energy scftyp=rohf mult=2 $end</blockquote>				
+					<blockquote class = command>&nbsp; $contrl runtyp=energy scftyp=rohf mult=2 $end</blockquote>				
 					
 					<p class="mb-30"><i>Note: You should put a blank (space) in front of a control group command. GAMESS will only run them if you do so.</i></p>
 					
@@ -129,14 +129,14 @@
 					In this calculation, we use a Gaussian basis set:  Pople's "triple split" N-311G. This basis set available for NGAUSS=6. 
 					The command for it is as follows.</p>
 					
-					<blockquote>&nbsp; $basis gbasis=N311 ngauss=6 $end</blockquote>
+					<blockquote class = command>&nbsp; $basis gbasis=N311 ngauss=6 $end</blockquote>
 					
 					<p class="mb-30">
 					<h6 >$data</h6>
 					This group describes the global molecular data. It contains several lines as follows.
 					</p>
 					
-					<blockquote>
+					<blockquote class = command>
 					&nbsp; $data<br>
 					My first hidrogen input<br>
 					C1<br>
@@ -153,7 +153,7 @@
 					</p>
 					
 					<p>Our input file is ready now. It should look as follows.					
-					<blockquote>
+					<blockquote class = command>
 					&nbsp; $contrl runtyp=energy scftyp=rohf mult=2 $end <br>
 					&nbsp; $basis gbasis=N311 ngauss=6 $end <br>
 					&nbsp; $data<br>
