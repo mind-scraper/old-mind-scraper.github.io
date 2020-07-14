@@ -142,6 +142,22 @@ blockquote {
   margin: 30px 0;
   border: none;
   border-left: 4px solid #b8a07e;
-  white-space: nowrap;
-  overflow-x: auto;
+}
+
+#parent {
+    list-style: none;
+    width: 100%;
+    height: 90px;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+#parent > li {
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    background-color: red;
 }
