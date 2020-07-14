@@ -146,4 +146,5 @@ blockquote {
 
 .nowrap {
   white-space: nowrap ;
+  overflow-x: auto;
 }
