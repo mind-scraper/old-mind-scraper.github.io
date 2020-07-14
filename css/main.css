@@ -112,13 +112,13 @@ html,body{
        (min-height: 240px) and (max-height: 420px) and
        (orientation:landscape) {
   .interstitial-wrapper {
-    margin-bottom: 100px;
+    margin-bottom: 20px;
   }
 }
 
 @media (min-height: 240px) and (orientation: landscape) {
   .offline .interstitial-wrapper {
-    margin-bottom: 90px;
+    margin-bottom: 20px;
   }
 
   .icon-offline {
