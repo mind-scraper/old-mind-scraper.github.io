@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- meta -->
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+
+  <title>Gamess-hydrogen calc.</title>
+  <!--<meta content="" name="keywords">
+  <meta content="" name="description">-->
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+  <link href="lib/hover/hover.min.css" rel="stylesheet">
+
+  <!-- Blog Stylesheet File -->
+  <link href="css/blog.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- Responsive css -->
+  <link href="css/responsive.css" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="images/favicon.png">
+
+  <!-- =======================================================
+    Theme Name: Folio
+    Theme URL: https://bootstrapmade.com/folio-bootstrap-portfolio-template/
+    Author: BootstrapMade.com
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
+</head>
+
+<body>
+
+  <!-- start section navbar -->
+  <nav id="main-nav-subpage" class="subpage-nav">
+    <div class="row">
+      <div class="container">
+
+        <div class="logo">
+          <a><img src="images/logo.png" alt="logo"></a>
+        </div>
+
+        <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
+
+        <ul class="nav-menu list-unstyled">
+          <li><a href="index.html" class="smoothScroll">Home</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End section navbar -->
+  <!-- start section main content -->
+  <div class="main-content paddsection">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="row">
+            <div class="container-main single-main">
+              <div class="col-md-12">
+                <div class="block-main mb-30">
+                  <img src="images/articel-gamess_hydrogen_atom_calc.jpg" class="img-responsive" alt="reviews2" style="width:100%;" >
+                  <div class="content-main single-post padDiv">
+                    <div class="journal-txt">
+                      <h4><a href="#">GAMESS - Calculation on the Hydrogen atom</a></h4>
+                    </div>
+                    <div class="post-meta">
+                      <ul class="list-unstyled mb-0">
+					  <li class="author">by:<a href="#">spayongmasan</a></li>
+                        <li class="date">date:<a href="#">July 14, 2020</a></li>                       
+                      </ul>
+                    </div>
+                    <p class="mb-30">Let's try GAMESS on the simplest system where everything began, the hydrogen atom.</p>
+					
+					<blockquote class=quotation>If the energy is not 13.6 eV, then it is wrong.</blockquote>
+														
+					<p class="mb-30">The goal of this tutorial is to make a GAMESS input file for the hydrogen atom and then run it on your computer system. This tutorial uses GAMESS on Windows 64 bit.
+					If you are using another operating system, the input file will be the same but the process to run the calculation maybe a little different.</p>
+					
+					<p class="mb-30">
+					<h5>1. Make input file</h5>
+					We will write the input file using notepad (I suggest to use notepad++).</p>
+					
+					<p class="mb-30">GAMESS input file contains several input groups. 
+					An input group starts with <mark>$[input group name]</mark> and ends with <mark>$end</mark>.
+					(You should read <a href=https://www.msg.chem.iastate.edu/gamess/documentation.html>GAMESS documentation</a> to get a detail description of each input group.) 
+					Some input groups are required while others are optional.
+					Here we only use three input group: </p>
+					
+					<p class="mb-30">
+					<h6 >$contrl</h6>
+					This group specifies fundamental job options. 
+					Here I  write the commands and their explanation.</p>
+					
+					<blockquote class = command>&nbsp; $contrl runtyp=energy scftyp=rohf mult=2 $end</blockquote>				
+					
+					<p class="mb-30"><i>Note: You should put a blank (space) in front of a control group command. GAMESS will only run them if you do so.</i></p>
+					
+					<ol>
+						<li><i>runtyp=energy</i><br>
+						RUNTYP specifies the type of computation.<br>
+						ENERGY means this is a molecular (or atomic in our case) single point energy calculation. It is the default option.
+						</li>
+						
+						<li><i>scftyp=rohf</i><br>
+						SCFTYP specifies the self-consistent field wavefunction.<br>
+						ROHF is Restricted open shell Hartree-Fock. We use this because our system has duplet (2) multiplicity.
+						</li>
+						
+						<li><i>mult=2</i> <br>
+						This gives information about our spin multiplicity. We can calculate it using 2S+1 with S is the total spin of our system.</li>
+					</ol>
+					
+					<p class="mb-30">
+					<h6>$basis</h6>
+					This group allows certain standard basis sets to be easily requested. 
+					In this calculation, we use a Gaussian basis set:  Pople's "triple split" N-311G. This basis set available for NGAUSS=6. 
+					The command for it is as follows.</p>
+					
+					<blockquote class = command>&nbsp; $basis gbasis=N311 ngauss=6 $end</blockquote>
+					
+					<p class="mb-30">
+					<h6 >$data</h6>
+					This group describes the global molecular data. It contains several lines as follows.
+					</p>
+					
+					<blockquote class = command>
+					&nbsp; $data<br>
+					My first hidrogen input<br>
+					C1<br>
+					H   1.0      0.0000000     0.0000000     0.0000000<br>
+					$end
+					</blockquote>	
+
+					<p>
+						<ul>
+							<li>The second line is TITLE: a description of your calculation (use only for printout).</li>
+							<li>The third line  is GROUP: the Schoenflies symbol of the symmetry group. We use C1 which means no symmetry.</li>
+							<li>The fourth line is ATOM INPUT. We fill it with: [Atom symbol/name (use only for printout)] [Nurclear charge] [X Y Z (cartesian coordinate)]</li>
+						</ul> 
+					</p>
+					
+					<p>Our input file is ready now. It should look as follows.					
+					<blockquote class = command>
+					&nbsp; $contrl runtyp=energy scftyp=rohf mult=2 $end <br>
+					&nbsp; $basis gbasis=N311 ngauss=6 $end <br>
+					&nbsp; $data<br>
+					My first hidrogen input<br>
+					C1<br>
+					H   1.0      0.0000000     0.0000000     0.0000000<br>
+					$end
+					</blockquote>
+					</p>
+					
+					<p>Now, save your file with <mark>.inp</mark> extension.</p>
+					<h5 class="mb-30">2. Run the calculation</h5>
+					<p class="mb-30">After installing GAMESS on your computer system, you should already follow the tutorial on the Readme file to run a sample input file using <mark>rungms.bat</mark> script.
+					In this tutorial, we will use <mark>double-click-run.bat</mark> script.</p>
+										
+					<h6>Step 1</h6>
+					<p>Copy your input file to <mark>C:\Users\Public\gamess-64\inputs</mark><br></p>
+					<p><img src="images/articel-gamess_hydorgen_atom_calc-step1.PNG" style="width:100%;"></p>
+										
+					<h6>Step 2</h6>
+					<p>Click file <mark>double-click-run.bat</mark> on <mark>C:\Users\Public\gamess-64</mark> then the calculation will be automatically  begun. 
+					Wait until message <mark>Finish with GAMESS job submission</mark> appears, then press any key to close the dialog box.</p>
+					<p><img src="images/articel-gamess_hydorgen_atom_calc-step2.PNG" style="width:100%;"></p>
+					<p><img src="images/articel-gamess_hydorgen_atom_calc-step2b.PNG" style="width:100%;"></p>								
+					
+					<h6 class="mb-30">Step 3</h6>
+					<p>You can find your output file at <mark>C:\Users\Public\gamess-64\outputs</mark>.</p>
+					<p><img src="images/articel-gamess_hydorgen_atom_calc-step3.PNG" style="width:100%;"></p>
+										
+					
+					<h6 class="mb-30">Alterlative</h6>
+					<p class="mb-30">If you want to run the calculation from another folder (outside the installation folder), 
+					copy file <mark>double-click-run.bat</mark>, <mark>double-click-run.gms</mark>, <mark>rungms.gms</mark> 
+					and folder <mark>inputs</mark>, <mark>outputs</mark> to that folder.</p>					
+					<p><img src="images/articel-gamess_hydorgen_atom_calc-step4.PNG" style="width:100%;"></p>
+					
+					<p class="mb-30">Now let see our output file. Open it use <mark>notepad++</mark>. Find line that contains <mark>total energy</mark>.
+					It is the total energy of our system (in hartree units). 
+					Convert it into electron volt and if there is nothing wrong, it should be 13.6 eV.</p>
+					<p><img src="images/articel-gamess_hydorgen_atom_calc-output.PNG" style="width:100%;"></p>
+					
+					<p>That's all, see you around!!!</p>
+                  </div> 
+                </div>
+              </div>                                        
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--  </div> -->
+  <!-- start section main content -->
+
+  <!-- start section footer -->
+  <div id="footer" class="text-center">
+    <div class="container">
+      
+
+      <p>&copy; Copyrights Folio. All rights reserved.</p>
+
+      <div class="credits">
+        <!--
+          All the links in the footer should remain intact.
+          You can delete the links only if you purchased the pro version.
+          Licensing information: https://bootstrapmade.com/license/
+          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Folio
+        -->
+        I get this website template from <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+
+    </div>
+  </div>
+  <!-- End section footer -->
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/typed/typed.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/magnific-popup/magnific-popup.min.js"></script>
+  <script src="lib/isotope/isotope.pkgd.min.js"></script>
+
+  <!-- Contact Form JavaScript File -->
+  <script src="contactform/contactform.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
