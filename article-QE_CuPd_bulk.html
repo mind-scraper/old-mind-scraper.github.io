@@ -95,32 +95,42 @@
                     <p class="mb-30">
                     Tujuan dari tutorial ini adalah untuk menghitung energi formasi bulk CuPd. Formasi CuPd dapat dinyatakan dengan persamaan reaksi berikut.                      
                     <center>Cu + Pd &#8594;	CuPd</center>
-                    Dari persamaan tersebut, dapat kita lihat bahwa untuk menghitung energi formasi CuPd, kita butuh menghitung energi total dari bulk Cu, Pd, dan CuPd.   
+                    Untuk menghitung energi formasi CuPd, kita butuh menghitung energi total dari bulk Cu, Pd, dan CuPd.   
                     </p>                      
                     
                     <p class="mb-30">
-                    Ada berbagai struktur kristal: Simple Cubic (SC), Body Centered Cubic (BCC), Face Centered Cubid (FCC), Hexagonal Closed Package (HCP), dsb. Dalam tutorial ini, kita akan menggunakan SC, BCC, dan FCC untuk semua sistem kita. 
+                    Dalam tutorial ini kita akan menggunakan struktur kristal FCC yang kita defenisikan menggunakan conventional cell. 
                     </p> 
                     
                     <p class="mb-30">
-                    Tutorial ini dibagi menjadi tiga langkah: optimisasi parameter komputasi, kalkulasi energi total, dan kalkulasi energi formasi. 
+                    Tutorial ini dibagi menjadi tiga langkah: kalkulasi energi total, dan kalkulasi energi formasi. 
                     </p> 
                     
                     
                     <p class="mb-30">
-					<h5>1. Optimisasi parameter komputasi</h5>
+					<h5>1. Kalkulasi energi total</h5>
                     </p> 
                     
                     <p class="mb-30">
-                    Ada dua parameter yang harus kita optimisasi: kinetic energy cutoff for wavefunctions (Ecutwfc) dan kpoint. Idealnya, dua parameter tersebut bernilai tak hingga. Namun hal ini akan menyebabkan begitu tingginya beban komputasi. Oleh karena itu, kita perlu melakukan optimisasi dengan memilih nilai tertentu dari parameter komputasi tersebut. Nilai yang kita harapkan adalah yang memberikan hasil kalkulasi yang tetap akurat tetapi dengan beban komputasi minimal. 
-                    </p> 
+                    Ada berbagai jenis kalkulasi yang disediakan Quantum ESPRESSO. Untuk sistem bulk, kalkulasi yang sesuai adalah vc-relax. Pada jenis kalkulasi ini, optimisasi dilakukan baik pada posisi atom-atom maupun ukuran cell.      
+                    
+                    Ada dua parameter kalkulasi yang penting: kinetic energy cutoff for wavefunctions (Ecutwfc) dan kpoint. Sejatinya dua parameter ini perlu dioptimisasi untuk mendapatkan nilai yang memberikan hasil kalkulasi yang akurat dengan beban komputasi minimal. Namun untuk alasan kesederhanaan, tutorial ini akan melompati tahap optimisasi tersebut. Kita akan menggunakan nilai Ecutwfc sebesar 50 Ry dan K-point sebesar 12.  
+                    </p>
                   
                     <p class="mb-30">
-					<h6>1.1 Optimisasi Ecutwfc</h6>
+					<h6>1.1 Cu</h6>
                     </p> 
                 
                     <p class="mb-30">
-					<h6>1.2 Optimisasi kpoint</h6>
+					Optimisasi Ecutwfc dilakukan dengan memvariasikan nilai Ecutwfc dari 5 hingga 100. 
+                    </p> 
+                
+                    <p class="mb-30">
+					<h6>1.2 Pd</h6>
+                    </p> 
+              
+                    <p class="mb-30">
+					<h6>1.3 Cu</h6>
                     </p> 
                    
                     
